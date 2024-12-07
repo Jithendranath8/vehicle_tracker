@@ -1,6 +1,6 @@
 export const fetchPathData = async () => {
     const response = await fetch(
-      "http://localhost:3040/api/location"
+      "https://vehicle-tracker-server.vercel.app/api/location"
     );
   
     if (!response.ok) {
