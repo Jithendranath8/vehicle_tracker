@@ -25,7 +25,7 @@ const App = () => {
 
   const fetchPath = async () => {
     try {
-      const response = await fetch("http://localhost:3040/api/location");
+      const response = await fetch("https://vehicle-tracker-server.vercel.app/api/location");
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
