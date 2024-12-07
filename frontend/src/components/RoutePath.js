@@ -1,4 +1,5 @@
 const drawPathOnMap = (mapRef, completedPathRef, coordinates) => {
+    // Step 1: I added the `fetchPath` function to retrieve path coordinates from the backend and update the state.
     completedPathRef.current.push(...coordinates);
   
     const geojson = {
@@ -9,6 +10,7 @@ const drawPathOnMap = (mapRef, completedPathRef, coordinates) => {
       },
     };
   
+    // Step 2: I used the `drawPathOnMap` utility to render the fetched path dynamically on the map.
     if (mapRef.current.getSource("route")) {
       mapRef.current.getSource("route").setData(geojson);
     } else {

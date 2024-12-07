@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const fs = require("fs").promises; // Use promises for better async handling
-const path = require("path"); // To resolve file paths
+const fs = require("fs").promises; 
+const path = require("path"); 
 const app = express();
 
 app.use(cors());
@@ -9,7 +9,7 @@ app.use(express.json());
 
 let routeData = null;
 
-// Load Dummy Data
+// I Loaded Dummy Data at starting of server by IIFE
 (async () => {
   try {
     const filePath = path.join(__dirname, "dummydata.json");
@@ -21,6 +21,7 @@ let routeData = null;
   }
 })();
 
+// this is endpoint to get data from server
 app.get("/api/location", (req, res) => {
   if (routeData) {
     res.json(routeData);
